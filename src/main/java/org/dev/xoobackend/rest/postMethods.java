@@ -1,5 +1,6 @@
 package org.dev.xoobackend.rest;
 
+import jakarta.transaction.Transactional;
 import org.dev.xoobackend.dao.xoo_1Dao;
 import org.dev.xoobackend.pojo.exceptionHandle;
 import org.dev.xoobackend.pojo.playedMove;
@@ -53,6 +54,11 @@ public class postMethods {
         return xoo_1dao.winnerOfGame(sessionId);
     }
 
+    @PostMapping("/getopponentname")
+    public String getOpponentname(@RequestParam String sessionId) {
+        return xoo_1dao.getOpponentName(sessionId);
+    }
+
 
     @ExceptionHandler
     public ResponseEntity<exceptionHandle> handleException(Exception e) {
@@ -60,6 +66,7 @@ public class postMethods {
         exceptionHandle exceptionHandle = new exceptionHandle(e.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exceptionHandle);
     }
+
 
 
 }

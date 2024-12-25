@@ -94,4 +94,22 @@ public class xoo_1DaoImpl implements xoo_1Dao{
         return "success";
     }
 
+    @Override
+    @Transactional
+    public String getOpponentName(String sessionId) {
+        String name="";
+        Query query = entityManager.createQuery("FROM xoo_1 where sessionId = :sessioId", xoo_1.class);
+        query.setParameter("sessioId", sessionId);
+        xoo_1 session =  (xoo_1) query.getSingleResult();
+
+        if (session.getOpponentName() == null) {
+            name ="none";
+        }
+        else {
+            name = session.getOpponentName();
+        }
+
+        return name;
+    }
+
 }

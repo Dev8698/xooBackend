@@ -9,5 +9,6 @@ public interface xoo_1Dao {
     playedMove currentMove (String sessionId);
     String winnerOfGame(String sessionId);
     String postWinnerOfGame(String sessionId, String winner);
+    String getOpponentName(String sessionId);
 
 }

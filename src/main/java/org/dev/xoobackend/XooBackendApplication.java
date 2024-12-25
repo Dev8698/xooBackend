@@ -17,9 +17,10 @@ public class XooBackendApplication {
     public CommandLineRunner commandLineRunner(xoo_1Dao xoo_1dao) {
         return args -> {
 //          System.out.println(xoo_1dao.JoinSession("amol",";G'v'Og2CA"));
-//          System.out.println(xoo_1dao.CreateNewSession("sudarshan"));
-//            System.out.println(xoo_1dao.Xmove(";G'v'Og2CA",1,1));
+//          System.out.println(xoo_1dao.CreateNewSession("sanket"));
+//            System.out.println(xoo_1dao.Xmove("7760922658",8,9));
 //            System.out.println(xoo_1dao.currentMove(";G'v'Og2CA").toString());
+//            System.out.println(xoo_1dao.getOpponentName("2328472872"));
         };
     }
 
